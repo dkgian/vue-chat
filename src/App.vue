@@ -8,7 +8,7 @@
 export default {
   name: 'App',
   created() {
-    //console.log(this.$store.state.db)
+    // console.log('Store: >>>', this.$store.state.db)
   },
 }
 </script>

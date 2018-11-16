@@ -10,6 +10,8 @@
           <p v-if="feedback" class="red-text">{{ feedback }}</p>
           <button class="btn teal">Enter chatroom!</button>
         </form>
+        <button @click="init">Init</button>
+        <button @click="get">Get</button>
 
       </div>
     </div>
@@ -37,6 +39,12 @@ export default {
       } else {
         this.feedback = 'Please enter your name!'
       }
+    },
+    init() {
+      this.$store.dispatch('users/seed')
+      this.$store.dispatch('conversations/seed')
+    },
+    get() {
     },
   },
 }
