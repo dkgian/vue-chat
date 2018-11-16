@@ -1,8 +1,8 @@
 <template>
   <div class="new-message">
-    <form @submit.prevent="addMessage">
+    <form @submit.prevent="sendMessage">
       <label for="new-message">New message: </label>
-      <input type="text" name="new-message" v-model="newMessage"/>
+      <input title="" type="text" name="new-message" v-model="newMessage"/>
     </form>
   </div>
 </template>
@@ -17,8 +17,14 @@ export default {
     }
   },
   methods: {
-    addMessage() {
-      console.log(this.newMessage, this.name, Date.now())
+    sendMessage() {
+      if (this.newMessage !== null) {
+        const message = {
+          name: this.name,
+          text: this.newMessage,
+          time: Date().now(),
+        }
+      }
     },
   },
 }
